@@ -8,7 +8,7 @@ To use django-telnyx in a project, add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'django_telnyx.apps.DjangoTelnyxConfig',
+        'django_telnyx',
         ...
     )
 

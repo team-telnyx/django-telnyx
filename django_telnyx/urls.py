@@ -1,9 +1,24 @@
+"""
+Django_telnyx urls
+
+This register `settings.WEBHOOK_URL` as an URl to receive webhooks requests.
+
+    Usage:
+    ```
+    urlpatterns = [
+        ...
+        url(r"^", include("django_telnyx.urls", namespace="django_telnyx")),
+    ]
+    ```
+"""
 # -*- coding: utf-8 -*-
+
 from django.conf.urls import url
-from django.views.generic import TemplateView
 
-from . import views
+from . import settings, views
 
+app_name = "django_telnyx"  # pylint: disable=invalid-name
 
-app_name = 'django_telnyx'
-urlpatterns = []
+urlpatterns = [
+    url(rf"^{settings.WEBHOOK_URL}", views.WebhookView.as_view(), name="webhook"),
+]

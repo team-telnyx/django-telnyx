@@ -34,7 +34,7 @@ Add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'django_telnyx.apps.DjangoTelnyxConfig',
+        'django_telnyx',
         ...
     )
 
